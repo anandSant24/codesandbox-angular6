@@ -4,3 +4,10 @@
     Welcome to {{ title }}!
   </h1>
 </div>
+<div>
+  <input type="text" (input)="inputText=$event.target.value" />
+  <button (click)="addItemsToArray()">add items</button>
+  <div *ngFor="let element of result">
+    <div>{{element}}</div>
+  </div>
+</div>
