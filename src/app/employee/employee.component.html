@@ -1,0 +1,26 @@
+<table>
+  <thead>
+    <tr>
+      <!-- 11 Angular recommends usage of property binding but we can use
+      Attribute binding if needed-->
+      <!-- <th colspan="{{columnSpan}}"> this gives an Te,mplate parse Erro-->
+      <th [attr.colspan]="columnSpan">
+        Employee Detail
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>First</td>
+      <td>Tom</td>
+    </tr>
+    <tr>
+      <td>Last</td>
+      <td>cook</td>
+    </tr>
+    <tr>
+      <td>Gender</td>
+      <td>Male</td>
+    </tr>
+  </tbody>
+</table>

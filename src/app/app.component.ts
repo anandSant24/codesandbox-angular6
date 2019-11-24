@@ -27,13 +27,4 @@ export class AppComponent {
     Property values can Change whereas
     Attribute Value Can't
 */
-  private _id;
-  @Input()
-  set id(value: string) {
-    this._id = value;
-    console.log(this._id);
-  }
-  get id() {
-    return this._id;
-  }
 }
