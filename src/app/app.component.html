@@ -10,7 +10,6 @@
     <div>{{element}}</div>
   </div>
 </div>
-
 <div>
   <!--### 8  interpolation is used to concatenate string  -->
   <img
@@ -26,4 +25,13 @@
   <button bind-disabled="isDisabled">New Btn</button>
 </div>
 <!-- ##10 Dom Property vs HTML element attribute  -->
-<!-- <input [id]="inputId" type="text" value="enter a value" /> -->
+<input id="inputId" type="text" value="Tim" />
+<!--
+   On the console you can use #id followed by value and getAttribute to get attribute
+  
+  #  inputId.value      // gives Tim
+  #  inputId.getAttribute('value') // gives Tim
+  now in your input field update it to Say Tom and try its input value and try again 
+  #  inputId.value      // gives Tom
+  #  inputId.getAttribute('value') // won't change Tim
+-->
