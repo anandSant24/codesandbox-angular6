@@ -1,9 +1,8 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
+  <h1>Application developer</h1>
 </div>
+<employee-table></employee-table>
 <div>
   <input type="text" (input)="inputText=$event.target.value" />
   <button (click)="addItemsToArray()">add items</button>
@@ -11,3 +10,20 @@
     <div>{{element}}</div>
   </div>
 </div>
+
+<div>
+  <!--### 8  interpolation is used to concatenate string  -->
+  <img
+    alt="buddha standing"
+    src="{{imageHttp}}://i.pinimg.com/originals/1f/c0/a8/1fc0a8101191e334b093931aefa608ba.jpg"
+    style="height:150px"
+  />
+</div>
+<div>
+  <!-- ### 9  we must use Property binding in case where in a boolean value is needed -->
+  <button [disabled]="isEnable">Click</button>
+  <!-- ##9 Syntax variation of using Property binding -->
+  <button bind-disabled="isDisabled">New Btn</button>
+</div>
+<!-- ##10 Dom Property vs HTML element attribute  -->
+<!-- <input [id]="inputId" type="text" value="enter a value" /> -->
