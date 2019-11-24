@@ -4,8 +4,9 @@
       <!-- 11 Angular recommends usage of property binding but we can use
       Attribute binding if needed-->
       <!-- <th colspan="{{columnSpan}}"> this gives an Te,mplate parse Erro-->
-      <th [attr.colspan]="columnSpan">
-        Employee Detail
+      <th attr.colspan="{{columnSpan}}">
+        <!--OR <th [attr.colspan]="columnSpan">-->
+        Employee Details
       </th>
     </tr>
   </thead>
