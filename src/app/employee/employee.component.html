@@ -12,16 +12,22 @@
   </thead>
   <tbody>
     <tr>
-      <td>First</td>
-      <td>Tom</td>
+      <td class="boldClass">First</td>
+      <td class="xs-SizeClass">Tom</td>
     </tr>
     <tr>
-      <td>Last</td>
-      <td>cook</td>
+      <td class="italicClass">Last</td>
+      <td class="colorClass" [class]="italicClass">cook</td>
     </tr>
     <tr>
-      <td>Gender</td>
-      <td>Male</td>
+      <!--To Add an Class -->
+      <td class="colorClass" [class.boldClass]="isBoldClass">Gender</td>
+      <td class="colorClass" [class.boldClass]="!isBoldClass">Male</td>
+    </tr>
+    <tr>
+      <!--To Add an Class -->
+      <td class="colorClass" [class.italicClass]="isBoldClass">country</td>
+      <td class="xs-SizeClass" [ngClass]="applyStyles()">US</td>
     </tr>
   </tbody>
 </table>
