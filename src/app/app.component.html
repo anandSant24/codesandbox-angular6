@@ -11,3 +11,28 @@
     <div>{{element}}</div>
   </div>
 </div>
+<div>
+  <!--### 8  interpolation is used to concatenate string  -->
+  <img
+    alt="buddha standing"
+    src="{{imageHttp}}://i.pinimg.com/originals/1f/c0/a8/1fc0a8101191e334b093931aefa608ba.jpg"
+    style="height:150px"
+  />
+</div>
+<div>
+  <!-- ### 9  we must use Property binding in case where in a boolean value is needed -->
+  <button [disabled]="isEnable">Click</button>
+  <!-- ##9 Syntax variation of using Property binding -->
+  <button bind-disabled="isDisabled">New Btn</button>
+</div>
+<!-- ##10 Dom Property vs HTML element attribute  -->
+<input id="inputId" type="text" value="Tim" />
+<!--
+   On the console you can use #id followed by value and getAttribute to get attribute
+  
+  #  inputId.value      // gives Tim
+  #  inputId.getAttribute('value') // gives Tim
+  now in your input field update it to Say Tom and try its input value and try again 
+  #  inputId.value      // gives Tom
+  #  inputId.getAttribute('value') // won't change Tim
+-->
