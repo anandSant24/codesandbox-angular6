@@ -25,9 +25,18 @@
       <td class="colorClass" [class.boldClass]="!isBoldClass">Male</td>
     </tr>
     <tr>
-      <!--To Add an Class -->
       <td class="colorClass" [class.italicClass]="isBoldClass">country</td>
-      <td class="xs-SizeClass" [ngClass]="applyStyles()">US</td>
+      <td class="xs-SizeClass" [ngClass]="applyClasses()">US</td>
+    </tr>
+    <tr>
+      <!--Style Binding -->
+      <button
+        style="color:blue"
+        [style.font-weight]="isBoldClass? 'bold' : 'normal'"
+      >
+        Button
+      </button>
+      <button style="color:green" [ngStyle]="addStyles()">Button New</button>
     </tr>
   </tbody>
 </table>

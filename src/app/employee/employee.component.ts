@@ -11,12 +11,22 @@ export class EmployeeComponent {
   isBoldClass: boolean = true;
   isItalicClass: boolean = true;
   isColor: boolean = false;
-  applyStyles() {
+  isBold: boolean = false;
+
+  applyClasses() {
     let applyClasses = {
       boldClass: this.isItalicClass,
       italicClass: this.isBoldClass,
       colorClass: this.isColor
     };
     return applyClasses;
+  }
+  addStyles() {
+    let applyStyle = {
+      "font-weight": "bold",
+      "font-style": "italic",
+      "font-size.px": "12"
+    };
+    return applyStyle;
   }
 }
