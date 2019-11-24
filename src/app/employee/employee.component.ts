@@ -29,4 +29,11 @@ export class EmployeeComponent {
     };
     return applyStyle;
   }
+
+  isShowData: boolean = false;
+
+  onToggle() {
+    console.log("called showDetails");
+    this.isShowData = !this.isShowData;
+  }
 }

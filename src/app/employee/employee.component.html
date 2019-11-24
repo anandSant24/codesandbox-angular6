@@ -1,4 +1,4 @@
-<table>
+<table style="border:1px solid red">
   <thead>
     <tr>
       <!-- 11 Angular recommends usage of property binding but we can use
@@ -19,7 +19,7 @@
       <td class="italicClass">Last</td>
       <td class="colorClass" [class]="styleClass">cook</td>
     </tr>
-    <tr>
+    <tr *ngIf="isShowData">
       <!--To Add an Class -->
       <td class="colorClass" [class.boldClass]="isBoldClass">Gender</td>
       <td class="colorClass" [class.boldClass]="!isBoldClass">Male</td>
@@ -28,15 +28,9 @@
       <td class="colorClass" [class.italicClass]="isBoldClass">country</td>
       <td class="xs-SizeClass" [ngClass]="applyClasses()">US</td>
     </tr>
-    <tr>
-      <!--Style Binding -->
-      <button
-        style="color:blue"
-        [style.font-weight]="isBoldClass? 'bold' : 'normal'"
-      >
-        Button
-      </button>
-      <button style="color:green" [ngStyle]="addStyles()">Button New</button>
-    </tr>
   </tbody>
 </table>
+<!--Style Binding -->
+<button (click)="onToggle()">{{isShowData? 'Hide': 'Show'}} Details</button>
+<br />
+<button style="color:green" [ngStyle]="addStyles()">Button New</button>
