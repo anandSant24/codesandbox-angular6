@@ -1,0 +1,15 @@
+.listTable {
+  border: 1px solid #000;
+  font-size: large;
+  font-family: Arial, sans-serif;
+  color: #369;
+  border-collapse: collapse;
+}
+td {
+  border: 1px solid #369;
+  padding: 2px;
+}
+th {
+  border: 1px solid #369;
+  padding: 2px;
+}

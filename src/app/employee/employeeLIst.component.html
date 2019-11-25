@@ -1,0 +1,22 @@
+<div>
+  <table class="listTable">
+    <thead>
+      <tr>
+        <th>Emp Code</th>
+        <th>Name</th>
+        <th>Sex</th>
+        <th>annual Salary</th>
+        <th>date Of Birth</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let employee of employees">
+        <td>{{employee.empCode}}</td>
+        <td>{{employee.name}}</td>
+        <td>{{employee.gender}}</td>
+        <td>{{employee.annualSalary}}</td>
+        <td>{{employee.dateOfBirth}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

@@ -1,5 +1,4 @@
 import { Component } from "@angular/core";
-
 @Component({
   selector: "employee-table",
   templateUrl: "employee.component.html",
@@ -37,4 +36,5 @@ export class EmployeeComponent {
     this.isShowData = !this.isShowData;
   }
   addText(): void {}
+  inputName: string = "enter";
 }
