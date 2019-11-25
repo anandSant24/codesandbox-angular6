@@ -10,13 +10,16 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let employee of employees">
-        <td>{{employee.empCode}}</td>
+      <tr
+        *ngFor="let employee of employees; trackBy:trackByEmp; let even = even;let odd=odd; let first=first; let last=last"
+      >
+        <td *ngIf="first">{{employee.empCode}}</td>
         <td>{{employee.name}}</td>
         <td>{{employee.gender}}</td>
-        <td>{{employee.annualSalary}}</td>
-        <td>{{employee.dateOfBirth}}</td>
+        <td *ngIf="odd">{{employee.annualSalary}}</td>
+        <td *ngIf="last">{{employee.dateOfBirth}}</td>
       </tr>
     </tbody>
   </table>
+  <button (click)="getMoreEmployees()">Show More Employees</button>
 </div>
