@@ -5,14 +5,7 @@ import { Component, Input } from "@angular/core";
   styleUrls: ["./app.component.css"]
 })
 export class AppComponent {
-  result: Array<string> = [];
   title = "CodeSandbox";
-  inputText: string = "Enter user details";
-
-  addItemsToArray(): void {
-    console.log(this.inputText);
-    this.result.push(this.inputText);
-  }
   /* interpolation is used to concatenate string */
   imageHttp: string = "https";
   isEnable: Boolean = false;

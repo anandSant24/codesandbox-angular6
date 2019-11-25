@@ -34,3 +34,13 @@
 <button (click)="onToggle()">{{isShowData? 'Hide': 'Show'}} Details</button>
 <br />
 <button style="color:green" [ngStyle]="addStyles()">Button New</button>
+
+<div>
+  <input
+    type="text"
+    [value]="inputVal"
+    (input)="inputVal=$event.target.value"
+  />
+  <button (click)="addText()">Add Text</button>
+  <span>{{inputVal}}</span>
+</div>

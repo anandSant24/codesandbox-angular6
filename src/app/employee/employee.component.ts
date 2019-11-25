@@ -31,9 +31,10 @@ export class EmployeeComponent {
   }
 
   isShowData: boolean = false;
-
+  inputVal: string = "enter";
   onToggle() {
     console.log("called showDetails");
     this.isShowData = !this.isShowData;
   }
+  addText(): void {}
 }
