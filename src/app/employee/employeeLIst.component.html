@@ -14,7 +14,7 @@
         *ngFor="let employee of employees; trackBy:trackByEmp; let even = even;let odd=odd; let first=first; let last=last"
       >
         <td>{{employee.empCode}}</td>
-        <td>{{employee.name | uppercase}}</td>
+        <td>{{employee.name | findGender:employee.gender}}</td>
         <td>{{employee.gender}}</td>
         <td>{{employee.annualSalary}}</td>
         <td>{{employee.dateOfBirth | date:'fullDate'}}</td>
