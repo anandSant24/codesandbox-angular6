@@ -78,13 +78,16 @@ export class EmployeeLIstComponent {
   trackByEmp(index: number, employee: any): string {
     return employee.empCode;
   }
+
   getAllEmployee(): number {
     return this.employees.length;
   }
-  getAllMaleEmployees(): number {
-    return this.employees.length;
+  getAllMaleEmployee(): number {
+    return this.employees.filter(emp => emp.gender.toLowerCase() === "m")
+      .length;
   }
-  getAllFemaleEmployees(): number {
-    return this.employees.length;
+  getAllFemaleEmployee(): number {
+    return this.employees.filter(emp => emp.gender.toLowerCase() === "f")
+      .length;
   }
 }
