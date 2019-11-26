@@ -13,11 +13,11 @@
       <tr
         *ngFor="let employee of employees; trackBy:trackByEmp; let even = even;let odd=odd; let first=first; let last=last"
       >
-        <td *ngIf="first">{{employee.empCode}}</td>
-        <td>{{employee.name}}</td>
+        <td>{{employee.empCode}}</td>
+        <td>{{employee.name | uppercase}}</td>
         <td>{{employee.gender}}</td>
-        <td *ngIf="odd">{{employee.annualSalary}}</td>
-        <td *ngIf="last">{{employee.dateOfBirth}}</td>
+        <td>{{employee.annualSalary}}</td>
+        <td>{{employee.dateOfBirth | date:'fullDate'}}</td>
       </tr>
     </tbody>
   </table>

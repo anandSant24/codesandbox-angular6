@@ -19,7 +19,7 @@ export class EmployeeLIstComponent {
       name: "Alex",
       gender: "M",
       annualSalary: "5900",
-      dateOfBirth: "25/06/1990"
+      dateOfBirth: "06/25/1990"
     },
     {
       empCode: "emp103",
@@ -50,7 +50,7 @@ export class EmployeeLIstComponent {
         name: "Alex",
         gender: "M",
         annualSalary: "5900",
-        dateOfBirth: "25/06/1990"
+        dateOfBirth: "06/25/1990"
       },
       {
         empCode: "emp103",
