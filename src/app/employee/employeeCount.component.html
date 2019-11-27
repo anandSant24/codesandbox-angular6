@@ -1,11 +1,28 @@
 <div>
-  <span>All</span>
-  <span>{{'('+all+')'}}</span>
-  <input type="radio" name="options" />
+  <input
+    type="radio"
+    name="options"
+    value="All"
+    [(ngModel)]="radioSelectionValue"
+    (change)="onInputRadioBtnChange()"
+  />
+  <span>All {{'('+all+')'}}</span>
 
+  <input
+    type="radio"
+    name="options"
+    value="M"
+    [(ngModel)]="radioSelectionValue"
+    (change)="onInputRadioBtnChange()"
+  />
   <span> Male {{'('+male+')'}}</span>
-  <input type="radio" name="options" />
 
+  <input
+    type="radio"
+    name="options"
+    value="F"
+    [(ngModel)]="radioSelectionValue"
+    (change)="onInputRadioBtnChange()"
+  />
   <span>Female {{'('+female+')'}}</span>
-  <input type="raido" name="options" />
 </div>

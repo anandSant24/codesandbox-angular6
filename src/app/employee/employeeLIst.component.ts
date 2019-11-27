@@ -90,4 +90,8 @@ export class EmployeeLIstComponent {
     return this.employees.filter(emp => emp.gender.toLowerCase() === "f")
       .length;
   }
+  selectedEmployeeCountRadioBtn: string = "All";
+  onEmployeeCountBtnChange(selection: string): void {
+    this.selectedEmployeeCountRadioBtn = selection;
+  }
 }
