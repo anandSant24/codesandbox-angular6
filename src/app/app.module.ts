@@ -7,13 +7,15 @@ import { EmployeeComponent } from "./employee/employee.component";
 import { EmployeeListComponent } from "./employee/employeeList.component";
 import { NotIfPipe } from "./employee/notIfPipe.pipe";
 import { EmployeeCountComponent } from "./employee/employeeCount.component";
+import { SimpleComponent } from "./employee/simple.component";
 @NgModule({
   declarations: [
     AppComponent,
     EmployeeComponent,
     EmployeeListComponent,
     NotIfPipe,
-    EmployeeCountComponent
+    EmployeeCountComponent,
+    SimpleComponent
   ],
   imports: [BrowserModule, FormsModule],
   providers: [],

@@ -10,6 +10,7 @@ export class AppComponent {
   imageHttp: string = "https";
   isEnable: Boolean = false;
   isDisabled: Boolean = false;
+  userText: string = "lifeCycle";
   /* ##10 Dom Property vs HTML element attribute */
   /*  When a Browser loads a web page the browser create a DOM for that page
     Attributes are defined by HTML where as 
