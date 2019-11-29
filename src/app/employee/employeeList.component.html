@@ -1,0 +1,36 @@
+<div>
+  <employee-count
+    *ngIf="employees"
+    [all]="getAllEmployee()"
+    [male]="getAllMaleEmployee()"
+    [female]="getAllFemaleEmployee()"
+    (onRadioBtnSelected)="onEmployeeCountBtnChange($event)"
+  ></employee-count>
+  <table class="listTable">
+    <thead>
+      <tr>
+        <th>Emp Code</th>
+        <th>Name</th>
+        <th>Sex</th>
+        <th>annual Salary</th>
+        <th>date Of Birth</th>
+      </tr>
+    </thead>
+    <tbody>
+      <ng-container
+        *ngFor="let employee of employees; trackBy:trackByEmp; let even = even;let odd=odd; let first=first; let last=last"
+      >
+        <tr
+          *ngIf="selectedEmployeeCountRadioBtn === 'All' || selectedEmployeeCountRadioBtn === employee.gender"
+        >
+          <td>{{employee.empCode}}</td>
+          <td>{{employee.name | findGender:employee.gender}}</td>
+          <td>{{employee.gender}}</td>
+          <td>{{employee.annualSalary}}</td>
+          <td>{{employee.dateOfBirth | date:'fullDate'}}</td>
+        </tr>
+      </ng-container>
+    </tbody>
+  </table>
+  <button (click)="getMoreEmployees()">Show More Employees</button>
+</div>

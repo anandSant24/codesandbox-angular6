@@ -1,9 +1,12 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div style="text-align:center">
-  <h1>Application developer</h1>
+  <h1>a</h1>
 </div>
+<input type="text" [(ngModel)]="userText" />
+<simple [simpleText]="userText"></simple>
 <employee-table></employee-table>
 <div>
+  <!--
   <input type="text" (input)="inputText=$event.target.value" />
   <button (click)="addItemsToArray()">add items</button>
   <div *ngFor="let element of result">
@@ -11,12 +14,13 @@
   </div>
 </div>
 <div>
+  -->
   <!--### 8  interpolation is used to concatenate string  -->
-  <img
+  <!-- <img
     alt="buddha standing"
     src="{{imageHttp}}://i.pinimg.com/originals/1f/c0/a8/1fc0a8101191e334b093931aefa608ba.jpg"
     style="height:150px"
-  />
+  /> -->
 </div>
 <div>
   <!-- ### 9  we must use Property binding in case where in a boolean value is needed -->

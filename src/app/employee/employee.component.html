@@ -1,26 +1,49 @@
-<table>
+<employee-list></employee-list>
+<table style="border:1px solid red">
   <thead>
     <tr>
       <!-- 11 Angular recommends usage of property binding but we can use
       Attribute binding if needed-->
-      <!-- <th colspan="{{columnSpan}}"> this gives an Te,mplate parse Erro-->
-      <th [attr.colspan]="columnSpan">
-        Employee Detail
+      <!-- <th colspan="{{columnSpan}}"> this gives an Template parse Error -->
+      <!--OR <th [attr.colspan]="columnSpan">-->
+      <th attr.colspan="{{columnSpan}}">
+        Employee Details
       </th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td>First</td>
-      <td>Tom</td>
+      <td class="boldClass">First</td>
+      <td class="xs-SizeClass">Tom</td>
     </tr>
     <tr>
-      <td>Last</td>
-      <td>cook</td>
+      <td class="italicClass">Last</td>
+      <td class="colorClass" [class]="styleClass">cook</td>
+    </tr>
+    <tr *ngIf="isShowData">
+      <!--To Add an Class -->
+      <td class="colorClass" [class.boldClass]="isBoldClass">Gender</td>
+      <td class="colorClass" [class.boldClass]="!isBoldClass">Male</td>
     </tr>
     <tr>
-      <td>Gender</td>
-      <td>Male</td>
+      <td class="colorClass" [class.italicClass]="isBoldClass">country</td>
+      <td class="xs-SizeClass" [ngClass]="applyClasses()">US</td>
     </tr>
   </tbody>
 </table>
+<!--Style Binding -->
+<button (click)="onToggle()">{{isShowData? 'Hide': 'Show'}} Details</button>
+<br />
+<button style="color:green" [ngStyle]="addStyles()">Button New</button>
+
+<div>
+  <input
+    type="text"
+    [value]="inputVal"
+    (input)="inputVal=$event.target.value"
+  />
+  <button (click)="addText()">Add Text</button>
+  <span>{{inputVal}}</span>
+  <input type="text" [(ngModel)]="inputName" />
+  <div>{{inputName}}</div>
+</div>
