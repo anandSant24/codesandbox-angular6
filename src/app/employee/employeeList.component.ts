@@ -1,15 +1,15 @@
 import { Component, OnInit } from "@angular/core";
 import { IEmployee } from "./employee";
 import { EmployeeService } from "../services/employee.service";
+import { Router } from "@angular/router";
 
 @Component({
-  selector: "employee-list",
   templateUrl: "./employeeList.component.html",
   styleUrls: ["./employeeList.style.css"],
   providers: [EmployeeService]
 })
 export class EmployeeListComponent implements OnInit {
-  constructor(private _employeeSvc: EmployeeService) {}
+  constructor(private _employeeSvc: EmployeeService, private router: Router) {}
   employees: IEmployee[];
   errorMsg: string;
   ngOnInit() {
@@ -75,5 +75,10 @@ export class EmployeeListComponent implements OnInit {
   selectedEmployeeCountRadioBtn: string = "All";
   onEmployeeCountBtnChange(selection: string): void {
     this.selectedEmployeeCountRadioBtn = selection;
+  }
+
+  onHome(): void {
+    console.log("inside Home");
+    this.router.navigate(["home"]);
   }
 }
