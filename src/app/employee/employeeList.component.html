@@ -1,5 +1,6 @@
 <div>
   <employee-count
+    *ngIf="employees"
     [all]="getAllEmployee()"
     [male]="getAllMaleEmployee()"
     [female]="getAllFemaleEmployee()"
