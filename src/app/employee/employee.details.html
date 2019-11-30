@@ -4,10 +4,10 @@
       <th colspan="2">Employee Details</th>
     </tr>
   </thead>
-  <tbody>
+  <tbody *ngFor="let employee of employees">
     <tr>
       <td>Employee Code</td>
-      <td *ngIf="employee.empCode">{{employee.empCode}}</td>
+      <td>{{employee.empCode}}</td>
     </tr>
     <tr>
       <td>Name</td>

@@ -12,7 +12,7 @@ export class EmployeeDetails implements OnInit {
     private empSvc: EmployeeService,
     private _activatedRoutes: ActivatedRoute
   ) {}
-  employee: IEmployee[];
+  employees: IEmployee[];
   statusMsg: string;
   routeCode: string;
   ngOnInit() {
@@ -20,7 +20,7 @@ export class EmployeeDetails implements OnInit {
     const id = this._activatedRoutes.snapshot.paramMap.get("empCode");
     console.log("id=", id);
     this.empSvc.getEmployeeDataByCode(id).subscribe({
-      next: empdata => (this.employee = empdata),
+      next: empdata => (this.employees = empdata),
       error: err => (this.statusMsg = err)
     });
   }
