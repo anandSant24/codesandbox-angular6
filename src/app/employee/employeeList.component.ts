@@ -12,7 +12,10 @@ export class EmployeeListComponent implements OnInit {
   constructor(private _employeeSvc: EmployeeService, private router: Router) {}
   employees: IEmployee[];
   errorMsg: string;
+  empCode: string;
   ngOnInit() {
+    //in Actual service empkCode should have been a real one but for testing purpose this is ok.
+    console.log("employeeList onInit");
     this._employeeSvc.getEmployeeData().subscribe({
       next: data => (this.employees = data),
       error: err => (this.errorMsg = err)

@@ -12,10 +12,12 @@ import { EmployeeCountComponent } from "./employee/employeeCount.component";
 import { SimpleComponent } from "./employee/simple.component";
 import { HomeComponent } from "./home/home.component";
 import { pageNotFoundComponent } from "./home/pageNotFound.component";
+import { EmployeeDetails } from "./employee/employee.details";
 
 const appRoutes: Routes = [
   { path: "home", component: HomeComponent },
   { path: "employees", component: EmployeeListComponent },
+  { path: "employees/:empCode", component: EmployeeDetails },
   // the app naviages to the home page automatically, this route redirects a URL that fully matches the empty path to the route whose path is /home
   { path: "", redirectTo: "/home", pathMatch: "full" },
   { path: "**", component: pageNotFoundComponent }
@@ -30,7 +32,8 @@ const appRoutes: Routes = [
     EmployeeCountComponent,
     SimpleComponent,
     HomeComponent,
-    pageNotFoundComponent
+    pageNotFoundComponent,
+    EmployeeDetails
   ],
   imports: [
     BrowserModule,

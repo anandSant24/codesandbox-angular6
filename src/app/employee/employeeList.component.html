@@ -1,6 +1,5 @@
-<div>
+<div *ngIf="employees">
   <employee-count
-    *ngIf="employees"
     [all]="getAllEmployee()"
     [male]="getAllMaleEmployee()"
     [female]="getAllFemaleEmployee()"
@@ -23,7 +22,11 @@
         <tr
           *ngIf="selectedEmployeeCountRadioBtn === 'All' || selectedEmployeeCountRadioBtn === employee.gender"
         >
-          <td>{{employee.empCode}}</td>
+          <td>
+            <a routerLink="/employees/{{employee.empCode}}">
+              {{employee.empCode}}
+            </a>
+          </td>
           <td>{{employee.name | findGender:employee.gender}}</td>
           <td>{{employee.gender}}</td>
           <td>{{employee.annualSalary}}</td>
