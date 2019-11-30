@@ -1,4 +1,12 @@
 ul {
   text-align: center;
   list-style: none;
+  display: inline;
+}
+li {
+  display: inline;
+}
+li a {
+  text-decoration: none;
+  padding: 20px;
 }

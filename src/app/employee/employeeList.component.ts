@@ -2,6 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { IEmployee } from "./employee";
 import { EmployeeService } from "../services/employee.service";
 import { Router } from "@angular/router";
+import { UserPreferencesService } from "../services/userPreferences.service";
 
 @Component({
   templateUrl: "./employeeList.component.html",
@@ -9,7 +10,19 @@ import { Router } from "@angular/router";
   providers: [EmployeeService]
 })
 export class EmployeeListComponent implements OnInit {
-  constructor(private _employeeSvc: EmployeeService, private router: Router) {}
+  colour: string;
+  private _userPreferencesService: UserPreferencesService;
+
+  get colour(): string {
+    return this._userPreferencesService.colorPreference;
+  }
+  set colour(value: string): string {
+    this._userPreferencesService.colorPreference = value;
+  }
+
+  constructor(private _employeeSvc: EmployeeService, private router: Router) {
+    this._userPreferencesService = new UserPreferencesService();
+  }
   employees: IEmployee[];
   errorMsg: string;
   empCode: string;
