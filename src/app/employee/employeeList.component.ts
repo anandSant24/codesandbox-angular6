@@ -3,6 +3,7 @@ import { IEmployee } from "./employee";
 import { EmployeeService } from "../services/employee.service";
 import { Router } from "@angular/router";
 import { UserPreferencesService } from "../services/userPreferences.service";
+import { Subscription } from "rxjs";
 
 @Component({
   templateUrl: "./employeeList.component.html",
@@ -11,10 +12,11 @@ import { UserPreferencesService } from "../services/userPreferences.service";
 })
 export class EmployeeListComponent implements OnInit {
   colour: string;
+  private subscribe: Subscription;
   constructor(
     private _employeeSvc: EmployeeService,
     private router: Router,
-    private _userPreferencesService: UserPreferencesService
+    private _userPreferencesService: UserPreferencesService // private subscription: Subscription
   ) {}
   get colour(): string {
     return this._userPreferencesService.colorPreference;
@@ -28,10 +30,14 @@ export class EmployeeListComponent implements OnInit {
   ngOnInit() {
     //in Actual service empkCode should have been a real one but for testing purpose this is ok.
     console.log("employeeList onInit");
-    this._employeeSvc.getEmployeeData().subscribe({
+    this.subscribe = this._employeeSvc.getEmployeeData().subscribe({
       next: data => (this.employees = data),
       error: err => (this.errorMsg = err)
     });
+  }
+  unscubscribe(): void {
+    console.log("Unsubscribing the event");
+    this.subscribe.unsubscribe();
   }
   getMoreEmployees(): void {
     this.employees = [
