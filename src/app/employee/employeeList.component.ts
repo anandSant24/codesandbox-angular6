@@ -11,17 +11,16 @@ import { UserPreferencesService } from "../services/userPreferences.service";
 })
 export class EmployeeListComponent implements OnInit {
   colour: string;
-  private _userPreferencesService: UserPreferencesService;
-
+  constructor(
+    private _employeeSvc: EmployeeService,
+    private router: Router,
+    private _userPreferencesService: UserPreferencesService
+  ) {}
   get colour(): string {
     return this._userPreferencesService.colorPreference;
   }
   set colour(value: string): string {
     this._userPreferencesService.colorPreference = value;
-  }
-
-  constructor(private _employeeSvc: EmployeeService, private router: Router) {
-    this._userPreferencesService = new UserPreferencesService();
   }
   employees: IEmployee[];
   errorMsg: string;

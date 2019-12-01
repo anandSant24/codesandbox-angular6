@@ -4,6 +4,8 @@ import { FormsModule } from "@angular/forms";
 import { HttpClientModule } from "@angular/common/http";
 import { RouterModule, Routes } from "@angular/router";
 
+import { UserPreferencesService } from "./services/userPreferences.service";
+
 import { AppComponent } from "./app.component";
 import { EmployeeComponent } from "./employee/employee.component";
 import { EmployeeListComponent } from "./employee/employeeList.component";
@@ -35,13 +37,13 @@ const appRoutes: Routes = [
     pageNotFoundComponent,
     EmployeeDetails
   ],
+  providers: [UserPreferencesService],
   imports: [
     BrowserModule,
     FormsModule,
     HttpClientModule,
     RouterModule.forRoot(appRoutes, { useHash: true })
   ],
-  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

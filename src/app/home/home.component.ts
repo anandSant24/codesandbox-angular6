@@ -6,10 +6,8 @@ import { UserPreferencesService } from "../services/userPreferences.service";
 })
 export class HomeComponent {
   colour: string;
-  private _userPreferenceSvc: UserPreferencesService;
-  constructor() {
-    this._userPreferenceSvc = new UserPreferencesService();
-  }
+
+  constructor(private _userPreferenceSvc: UserPreferencesService) {}
   homeTitle: string = "home";
   get colour(): string {
     return this._userPreferenceSvc.colorPreference;
