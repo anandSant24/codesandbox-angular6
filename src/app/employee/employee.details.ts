@@ -19,9 +19,15 @@ export class EmployeeDetails implements OnInit {
     console.log("geeting param value");
     const id = this._activatedRoutes.snapshot.paramMap.get("empCode");
     console.log("id=", id);
+    //when using Obesrvable
     this.empSvc.getEmployeeDataByCode(id).subscribe({
       next: empdata => (this.employees = empdata),
       error: err => (this.statusMsg = err)
     });
+
+    //Using Promise
+    // this.empSvc
+    //   .getEmployeeDataByCode(id)
+    //   .then(empdata => (this.employees = empdata));
   }
 }

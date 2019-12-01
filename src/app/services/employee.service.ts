@@ -31,9 +31,10 @@ export class EmployeeService {
     let errorMsg = err.error;
     throw errorMsg;
   }
-  getEmployeeDataByCode(empCode: string): Observable<IEmployee[]> {
+  getEmployeeDataByCode(empCode: string): Promise<IEmployee[]> {
     console.log("inside Service", empCode);
     // let destUrl = this.empDetailUrl + JSON.stringify(empCode);
+    // When using Observable
     return this._http.get<IEmployee[]>(this.empDetailUrl).pipe(
       tap(data =>
         console.log(
@@ -43,5 +44,13 @@ export class EmployeeService {
       ),
       catchError(this.handleError)
     );
+
+    //Using Promise , didn't worked
+    // return this._http
+    //   .get<IEmployee[]>(this.empDetailUrl)
+    //   .toPromise()
+    //   .catch(err => {
+    //     throw err;
+    //   });
   }
 }
