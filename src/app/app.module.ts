@@ -6,7 +6,7 @@ import { RouterModule, Routes } from "@angular/router";
 
 // import { UserPreferencesService } from "./services/userPreferences.service";
 import { TestModule } from "./test.module";
-
+import { HighlightDirective } from "./buildAttr.directive";
 import { AppComponent } from "./app.component";
 import { EmployeeComponent } from "./employee/employee.component";
 import { EmployeeListComponent } from "./employee/employeeList.component";
@@ -36,7 +36,8 @@ const appRoutes: Routes = [
     SimpleComponent,
     HomeComponent,
     pageNotFoundComponent,
-    EmployeeDetails
+    EmployeeDetails,
+    HighlightDirective
   ],
   // providers: [UserPreferencesService],
   imports: [
